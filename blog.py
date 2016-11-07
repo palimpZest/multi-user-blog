@@ -65,8 +65,11 @@ def render_post(response, post):
     response.out.write(post.content)
 
 class MainPage(BlogHandler):
-  def get(self):
-      self.write('Hello, Udacity!')
+    def render_front(self):
+        self.render("front.html")
+
+    def get(self):
+        self.render_front()
 
 
 ##### user stuff

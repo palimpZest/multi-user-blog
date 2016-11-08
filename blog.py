@@ -264,7 +264,7 @@ class Login(BlogHandler):
         u = User.login(username, password)
         if u:
             self.login(u)
-            self.redirect('/blog')
+            self.redirect('/unit3/welcome')
         else:
             msg = 'Invalid login'
             self.render('login-form.html', error = msg)
@@ -272,7 +272,7 @@ class Login(BlogHandler):
 class Logout(BlogHandler):
     def get(self):
         self.logout()
-        self.redirect('/blog')
+        self.redirect('/signup')
 
 class Unit3Welcome(BlogHandler):
     def get(self):
